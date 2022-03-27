@@ -85,4 +85,14 @@ test('uses a potion from inventory', () => {
     player.usePotion(1);
 
     expect(player.inventory.length).toBeLessThan(oldCount);
-})
+});
+
+test('checks if player is alive or not', () => {
+    const player = new Player('Dave');
+  
+    expect(player.isAlive()).toBeTruthy();
+  
+    player.health = 0;
+  
+    expect(player.isAlive()).toBeFalsy();
+  });
